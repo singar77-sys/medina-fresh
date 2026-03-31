@@ -1,3 +1,5 @@
+'use client'
+
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -40,16 +42,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0C1B33" />
-      </head>
-      <body className="bg-white text-gray-900 antialiased">
-        <main>{children}</main>
-      </body>
-    </html>
+ return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#8C1B33" />
+        </head>
+        <body className="bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-50 antialiased">
+          <main>{children}</main>
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }
