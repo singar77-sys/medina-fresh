@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Typography */
+@layer base {
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl font-bold;
+  }
+
+  h6 {
+    @apply text-base md:text-lg font-bold;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-brand-cambridge hover:text-brand-coquelicot transition-colors;
+  }
+
+  button {
+    @apply font-medium transition-all duration-200;
+  }
+
+  body {
+    @apply font-sans text-gray-900;
+  }
+}
+
+/* Button Components */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-coquelicot text-white font-semibold rounded-lg hover:bg-opacity-90 active:scale-95 transition-all;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-brand-cambridge text-white font-semibold rounded-lg hover:bg-opacity-90 active:scale-95 transition-all;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-brand-cambridge text-brand-cambridge font-semibold rounded-lg hover:bg-brand-cambridge hover:text-white transition-all;
+  }
+
+  /* Container Layout */
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply w-full;
+  }
+
+  /* Utility Classes */
+  .gradient-brand {
+    @apply bg-gradient-to-br from-brand-oxford via-brand-emerald to-brand-oxford;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cambridge to-brand-coquelicot;
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+}
+
+/* Keyframe Animations */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0c1b33;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #83bca9;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #83bca9;
+  color: white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid #83bca9;
+  outline-offset: 2px;
+}
